@@ -3,6 +3,14 @@ layout: lesson
 root: .
 ---
 
+> ## Modified for 2018 Sydney ResBaz
+>
+> This is a modified version of the Software Carpentry python-testing lesson by
+> Kathryn D. Huff for the purposes of 2018 Sydney ResBaz. See
+> [https://github.com/katyhuff/python-testing](https://github.com/katyhuff/python-testing)
+> for the original.
+{: .callout}
+
 Before relying on a new experimental device, an experimental scientist always
 establishes its accuracy. A new detector is calibrated when the scientist
 observes its responses to known input signals. The results of this
@@ -36,7 +44,7 @@ capabilities and when its tests do not pass.
 > when you evaluate the acceptability of your own or someone else's software.
 {: .callout}
 
-In most other programming endeavors, if code is fundamentally wrong
+In most other programming endeavours, if code is fundamentally wrong
 - even for years at a time - the impact of this error can be relatively small.
 Perhaps a website goes down, or a game crashes, or a days worth of writing is
 lost to a bug in your word processor. Scientific code, on the other hand,
@@ -72,7 +80,7 @@ desire to work more efficiently, all scientists can benefit from testing.
 > You should have a basic understanding of Python variables and functions are a
 > necessary prerequisite. Some previous experience with the shell and git
 > is expected. If you have done an Software Carpentry course with Python, Shell
-> and Git, then you are suffiecently prepared for this course.
+> and Git, then you are sufficiently prepared for this course.
 >
 > You are *not* expected to be familiar with pytest (the Python library we will
 > be using), nor with the new Python concepts we will cover. 

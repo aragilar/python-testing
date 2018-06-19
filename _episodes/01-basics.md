@@ -10,7 +10,7 @@ objectives:
 keypoints:
 - "Tests check whether the observed result, from running the code, is what was expected ahead of time."
 - "Tests should ideally be written before the code they are testing is written, however some tests must be written after the code is written."
-- "Assertions and exceptions are like alarm systems embedded in the software, guarding against exceptional bahavior."
+- "Assertions and exceptions are like alarm systems embedded in the software, guarding against exceptional behaviour."
 - "Unit tests try to test the smallest pieces of code possible, usually functions and methods."
 - "Integration tests make sure that code units work together properly."
 - "Regression tests ensure that everything works the same today as it did yesterday."
@@ -36,12 +36,12 @@ There are many ways to test software, such as:
 - Assertions
 - Exceptions
 - Unit Tests
-- Regresson Tests
+- Regression Tests
 - Integration Tests
 
 *Exceptions and Assertions*: While writing code, `exceptions` and `assertions` 
 can be added to sound an alarm as runtime problems come up. These kinds of 
-tests, are embedded in the software iteself and handle, as their name implies, 
+tests, are embedded in the software itself and handle, as their name implies, 
 exceptional cases rather than the norm. 
 
 *Unit Tests*: Unit tests investigate the behavior of units of code (such as
