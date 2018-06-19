@@ -55,7 +55,7 @@ line of code. The disadvantage is that assertions halt execution
 indiscriminately and the helpfulness of the resulting error message is usually
 quite limited.
 
-Also, input checking may require decending a rabbit hole of exceptional cases.
+Also, input checking may require descending a rabbit hole of exceptional cases.
 What happens when the input provided to the mean function is a string, rather
 than a list of numbers?
 
