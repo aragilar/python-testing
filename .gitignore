@@ -1,5 +1,12 @@
-*.pyc
+README.html
+LAYOUT.html
+FAQ.html
+DESIGN.html
+CONTRIBUTING.html
+CONDUCT.html
+*.orig
 *~
+*.pyc
 .DS_Store
 .ipynb_checkpoints
 .sass-cache
