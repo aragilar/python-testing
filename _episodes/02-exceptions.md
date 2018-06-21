@@ -1,5 +1,5 @@
 ---
-title: Exceptions
+title: Using Exceptions
 teaching: 10
 exercises: 0
 questions:
@@ -28,7 +28,7 @@ def mean(num_list):
     else :
       return sum(num_list)/len(num_list)
 ~~~
-{: .python}
+{: .language-python}
 
 Once an exception is raised, it will be passed upward in the program scope.
 An exception be used to trigger additional error messages or an alternative
@@ -48,7 +48,7 @@ def mean(num_list):
         msg = "The algebraic mean of an empty list is undefined. Please provide a list of numbers."
         raise ZeroDivisionError(detail.__str__() + "\n" +  msg)
 ~~~
-{: .python}
+{: .language-python}
 
 Alternatively, the exception can simply be handled intelligently. If an
 alternative behavior is preferred, the exception can be disregarded and a
@@ -61,7 +61,7 @@ def mean(num_list):
     except ZeroDivisionError :
         return 0
 ~~~
-{: .python}
+{: .language-python}
 
 If a single function might raise more than one type of exception, each can be
 caught and handled separately.
@@ -77,7 +77,7 @@ def mean(num_list):
                Please provide a list of numbers."
         raise TypeError(detail.__str__() + "\n" +  msg)
 ~~~
-{: .python}
+{: .language-python}
 
 > ## What else could go wrong?
 >
