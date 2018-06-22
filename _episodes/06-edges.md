@@ -179,3 +179,10 @@ Whether internal, edge, or corner cases, we have started to build
 up a classification system for the tests themselves. In the following sections,
 we will build this system up even more based on the role that the tests have
 in the software architecture.
+
+> ## Tools to use: Hypothesis
+> [Hypothesis](https://hypothesis.readthedocs.io/en/latest/index.html) is a
+> Python library which finds corner cases which you'd never expect. It
+> integrates well with pytest, and makes your code much more robust against
+> strange input.
+{: .testimonial}
