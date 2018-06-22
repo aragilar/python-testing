@@ -55,3 +55,12 @@ which might appear due to new software and updates.
 
 *Integration Tests*: Integration tests check that various pieces of the
 software work together as expected. 
+
+> ## Tools to use
+> Testing and debugging are one area of software development where having the
+> right tools can save significant time and effort. Throughout this lesson there
+> will be a number of callouts which provide references to useful tools to look
+> at and use. Don't feel that you have to use every tool mentioned—some are
+> only useful under certain circumstances—but ask both the instructions what
+> tools they use to make their lives easier.
+{: .testimonial}

@@ -149,3 +149,9 @@ tests.
 
 While more test classifications exist for more specialized situations, we have covered
 what you will need to know for almost every situation in computational physics.
+
+> ## Tools to use: pytest-regtest
+> [pytest-regtest](https://pypi.org/project/pytest-regtest/) is a pytest plugin
+> which makes regression testing significantly easier, as it manages storing
+> older versions of the output of tests for comparison.
+{: .testimonial}

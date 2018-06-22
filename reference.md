@@ -1,7 +1,6 @@
 ---
 layout: reference
-title: Key Points and Glossary
-subtitle: Reference
+permalink: /reference/
 ---
 ## Glossary
 

@@ -1,11 +1,11 @@
 ---
-title: Exceptions, Status Values and Backtraces
+title: Exceptions, Status Values and Tracebacks
 teaching: 10
 exercises: 0
 questions:
 - "What does this error mean?"
 objectives:
-- "Learn how to read a Python backtrace."
+- "Learn how to read a Python traceback."
 - "Learn what an exception is, and that there are many types."
 keypoints:
 - "Exceptions are one way exposing errors."
@@ -37,6 +37,13 @@ common: a message which tells you (sometimes cryptically) what went wrong, and
 where is occurred. Learning to debug Python is learning to use those two bits of
 information to find out why there is a problem.
 
+> ## What different types of exceptions are there?
+> A list of different exceptions included with Python can be found at
+> https://docs.python.org/3/library/exceptions.html#exception-hierarchy.
+> In addition, it is possible to create custom exceptions (which we won't cover
+> in this course).
+{: .callout}
+
 Below are three Python functions which call each other in a Python file that
 I've called `divide_by_zero.py`.
 
@@ -54,6 +61,14 @@ more_outer()
 ~~~
 {: .language-python}
 
+and if we run the python file:
+
+~~~
+$ python divide_by_zero.py
+~~~
+{: .language-shell}
+
+we get the following output:
 
 ~~~
 Traceback (most recent call last):
@@ -69,10 +84,43 @@ ZeroDivisionError: integer division or modulo by zero
 ~~~
 {: .error}
 
+This output is called a traceback (or backtrace or stacktrace): the traceback
+contains the exception that was raised, where it was raised originally (line
+number, name of function and filename, where the function which called the
+function which raised the exception, and so on until we're out of functions we
+called. Read tracebacks from bottom to top; the bottom is the location of the
+raised exception.
 
-> ## What different types of exceptions are there?
-> A list of different exceptions included with Python can be found at
-> https://docs.python.org/3/library/exceptions.html#exception-hierarchy.
-> In addition, it is possible to create custom exceptions (which we won't cover
-> in this course).
-{: .callout}
+In the above example, the line
+
+~~~
+ZeroDivisionError: integer division or modulo by zero
+~~~
+{: .error}
+
+tells us the exception name and a description of the problem (we tried to divide
+by zero); the lines
+
+~~~
+  File "divide_by_zero.py", line 2, in inner
+    return 1/0
+~~~
+{: .error}
+
+tell where the exception was raised (line 2 of `divide_by_zero.py`, inside the
+function called `inner`).
+
+Whilst in our simple case we can directly see the problem, remember that just
+because an exception was raised on a particular line, it does not mean that the
+bug occurs on that line. Debugging is a skill which takes practice and
+experience to develop, and best way of improving it is to notice patterns in the
+types of bugs that you run into. Helping others with debugging their code is
+another way to gain experience.
+
+> ## Tools to use: Debuggers
+> Debuggers are a group of programs which allow users to step through the
+> running of a program. Many text editors and programming environments provide
+> either their own debugger, or build around a debugger. Python has a built in
+> debugger [pdb](https://docs.python.org/3/library/pdb.html): usually it's
+> better to learn to use pdb than to add lots of print statements.
+{: .testimonial}
