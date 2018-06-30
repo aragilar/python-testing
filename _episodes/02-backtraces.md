@@ -22,7 +22,8 @@ this means either:
    before include `inf` and `NaN`, and `None` is a commonly used status value in
    Python.
 2. "Raising" an exception. The word "raising" in this context refers to how the
-   exception is created and passed around by Python.
+   exception is created and passed around by Python. Other languages may use the
+   terminology "thrown".
 
 In general, Python programmers prefer using exceptions over status values, and
 we will provide some general guidance about when to use both in the next
