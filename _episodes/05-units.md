@@ -109,15 +109,13 @@ def test_long():
     assert obs == exp
 
 def test_complex():
-    # given that complex numbers are an unordered field
-    # the arithmetic mean of complex numbers is meaningless
     num_list = [2 + 3j, 3 + 4j, -32 - 2j]
     obs = mean(num_list)
-    exp = NotImplemented
+    exp = -9 + 1j/3
     assert obs == exp
 ~~~
 {: .python}
 
-Use IPython to import the `test_mean` package and run each test.
+Import the `test_mean` package and run each test.
 
 Well, **that** was tedious.
