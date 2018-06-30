@@ -39,7 +39,7 @@ Traceback (most recent call last):
 ~~~
 {: .output}
 
-That is, assertions halt code execution instantly if the comparison is false.
+That is, assertions raise an `AssertionError` if the comparison is false.
 It does nothing at all if the comparison is true. These are therefore a very
 good tool for guarding the function against foolish (e.g. human) input:
 
@@ -93,7 +93,7 @@ from mynum import a
 ~~~
 {: .python}
 
-## NumPy
+## Floating point numbers
 
 The NumPy numerical computing library has a built-in function `assert_allclose`
 for comparing numbers within a tolerance:
