@@ -22,7 +22,7 @@ all at once, just reporting which tests fail and which succeed.
 Thankfully, that exists. Recall our tests:
 
 ~~~
-from mean import *
+from mean import mean
 
 def test_ints():
     num_list = [1,2,3,4,5]
@@ -50,11 +50,9 @@ def test_long():
     assert obs == exp
 
 def test_complex():
-    # given that complex numbers are an unordered field
-    # the arithmetic mean of complex numbers is meaningless
     num_list = [2 + 3j, 3 + 4j, -32 - 2j]
     obs = mean(num_list)
-    exp = NotImplemented
+    exp = -9 + 1j/3
     assert obs == exp
 ~~~
 {: .python}
@@ -79,14 +77,14 @@ ________________________________ test_complex _________________________________
         # the arithmetic mean of complex numbers is meaningless
         num_list = [2 + 3j, 3 + 4j, -32 - 2j]
         obs = mean(num_list)
-        exp = NotImplemented
+        exp = -9 + 1j/3
 >       assert obs == exp
-E       assert (-9+1.6666666666666667j) == NotImplemented
+E       assert (-9+1.6666666666666667j) == (-9+0.3333333333333333j)
 
 test_mean.py:34: AssertionError
 ===================== 1 failed, 4 passed in 2.71 seconds ======================
 ~~~
-{: .output}
+{: .error}
 
 In the above case, the pytest package 'sniffed-out' the tests in the
 directory and ran them together to produce a report of the sum of the files and
@@ -102,14 +100,13 @@ This automatic registration of test code saves tons of human time and allows us 
 focus on what is important: writing more tests.
 
 When you run `pytest`, it will print a dot (`.`) on the screen for every test
-that passes,
-an `F` for every test that fails or where there was an unexpected error.
-In rarer situations you may also see an `s` indicating a
-skipped tests (because the test is not applicable on your system) or a `x` for a known
-failure (because the developers could not fix it promptly). After the dots, pytest
-will print summary information.
+that passes, an `F` for every test that fails or where there was an unexpected
+error.  In rarer situations you may also see an `s` indicating a skipped tests
+(because the test is not applicable on your system) or a `x` for a known failure
+(because the developers fixed the problem shown in the test). After the dots,
+pytest will print summary information.
 
-Without changing the tests, alter the mean.py file from the previous section until it passes.
+Fix the problematic test, and run pytest again.
 When it passes, `pytest` will produce results like the following:
 
 ~~~

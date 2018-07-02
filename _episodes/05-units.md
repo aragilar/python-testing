@@ -59,7 +59,7 @@ observed and expected values. For example, let us test that our mean function
 successfully calculates the known value for a simple list.
 
 ~~~
-from mean import *
+from mean import mean
 
 def test_ints():
     num_list = [1, 2, 3, 4, 5]
@@ -81,7 +81,7 @@ implemented function may be tested in numerous ways.
 In a file called `test_mean.py`, implement the following code:
 
 ~~~
-from mean import *
+from mean import mean
 
 def test_ints():
     num_list = [1, 2, 3, 4, 5]
@@ -109,6 +109,7 @@ def test_long():
     assert obs == exp
 
 def test_complex():
+    # hint: there's a problem with this test
     num_list = [2 + 3j, 3 + 4j, -32 - 2j]
     obs = mean(num_list)
     exp = -9 + 1j/3
