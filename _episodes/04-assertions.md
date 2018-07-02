@@ -30,7 +30,7 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
   AssertionError
 ~~~
-{: .output}
+{: .error}
 ~~~
 >>> assert True == True
 ~~~
@@ -40,40 +40,16 @@ Traceback (most recent call last):
 {: .output}
 
 That is, assertions raise an `AssertionError` if the comparison is false.
-It does nothing at all if the comparison is true. These are therefore a very
-good tool for guarding the function against foolish (e.g. human) input:
-
+It does nothing at all if the comparison is true. Assertions are therefore a
+simple way of writing tests.
 ~~~
-def mean(num_list):
-    assert len(num_list) != 0
-    return sum(num_list)/len(num_list)
+>>> assert mean([1,2,3]) == 2
 ~~~
 {: .python}
-
-The advantage of assertions is their ease of use. They are rarely more than one
-line of code. The disadvantage is that assertions halt execution
-indiscriminately and the helpfulness of the resulting error message is usually
-quite limited.
-
-Also, input checking may require descending a rabbit hole of exceptional cases.
-What happens when the input provided to the mean function is a string, rather
-than a list of numbers?
-
-1. Open an IPython Notebook
-2. Create the following function:
-
 ~~~
-def mean(num_list):
-  return sum(num_list)/len(num_list)
 ~~~
-{: .python}
+{: .output}
 
-3. In the function, insert an assertion that checks whether the input is actually a list.
-
-> ## Hint
->
-> Hint: Use the [isinstance function](https://docs.python.org/2/library/functions.html#isinstance).
-{: .callout}
 
 > ## Testing Near Equality
 >
@@ -84,23 +60,38 @@ def mean(num_list):
 > - My package, mynum, provides the number a.
 > - Use the `assert` keyword to check whether the number a is greater than 2.
 > - Use the `assert` keyword to check that a is equal to 2 within an error of 0.003.
-{: .callout}
+>
+> ~~~
+> from mynum import a
+> # greater than 2 assertion here
+> # 0.003 assertion here
+> ~~~
+> {: .python}
+>
+> > ## Solution
+> > The simplest solution is
+> > ~~~
+> > from mynum import a
+> > assert a > 2
+> > assert (2 - 0.003) < a < (2 + 0.003)
+> > ~~~
+> > {: .python}
+> > However what if we make a typo in the second assertion? We could be testing
+> > for the wrong thing! A better solution would be to use the function
+> > `assert_allclose` from NumPy:
+> > ~~~
+> > from numpy.testing import assert_allclose
+> > from mynum import a
+> > assert a > 2
+> > assert_allclose(a, 2, atol=0.003, rtol=0)
+> > ~~~
+> > {: .python}
+> {: .solution}
+{: .challenge}
 
-~~~
-from mynum import a
-# greater than 2 assertion here
-# 0.003 assertion here
-~~~
-{: .python}
+> ## Tools to use: `numpy.testing`
+> The NumPy numerical computing library has a module which provides functions
+> for testing floating point numbers, [`numpy.testing`](https://docs.scipy.org/doc/numpy/reference/routines.testing.html),
+> which you should use whenever you are dealing with floating point numbers.
+{: .testimonial}
 
-## Floating point numbers
-
-The NumPy numerical computing library has a built-in function `assert_allclose`
-for comparing numbers within a tolerance:
-
-~~~
-from numpy.testing import assert_allclose
-from mynum import a
-assert_allclose(a, 2, atol=0.003, rtol=0)
-~~~
-{: .python}
